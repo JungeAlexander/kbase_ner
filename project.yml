@@ -1,0 +1,31 @@
+title: "NER in kbase"
+description: "Named entity recognition for documents in kbase using spacy."
+vars:
+  name: "ner_kbase"
+  lang: "en"
+  dev: "20210312-dummy/run-DataSink0-1-part-r-00000.bz2"
+  version: "0.0.0"
+  # Set your GPU ID, -1 is CPU
+  gpu_id: -1
+  vectors_model: "en_core_web_md"
+
+directories: ["assets", "corpus", "configs", "training", "scripts", "packages"]
+
+assets:
+  - dest: "assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2"
+    description: "Dummy data as downloaded on 20210312 from RDS DB dump as produced by AWS Glue ETL."
+
+workflows:
+  all:
+    - convert
+
+commands:
+  - name: "convert"
+    help: "Convert the data to spaCy's binary format"
+    script:
+      - "python scripts/convert.py ${vars.lang} assets/${vars.dev} corpus/dev.spacy"
+    deps:
+      - "assets/${vars.dev}"
+      - "scripts/convert.py"
+    outputs:
+      - "corpus/dev.spacy"

@@ -21,4 +21,4 @@ in the project directory.
 
 | File | Source | Description |
 | --- | --- | --- |
-| [`assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2](assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2) | Local | Dummy data as downloaded on 20210312 from RDS DB dump as produced by AWS Glue ETL. |
+| [`assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2`](assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2) | Local | Dummy data as downloaded on 20210312 from RDS DB dump as produced by AWS Glue ETL. |
