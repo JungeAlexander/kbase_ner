@@ -61,17 +61,6 @@ All commands in this README need to be run in a poetry shell which can be activa
 poetry shell
 ```
 
-### spacy models
-
-To download all the pretrained pipelines for English:
-
-```
-python -m spacy download en_core_web_sm
-python -m spacy download en_core_web_md
-python -m spacy download en_core_web_lg
-python -m spacy download en_core_web_trf
-```
-
 ### Project structure
 
 The project structure is based on a spacy example project structure obtained as follows and
