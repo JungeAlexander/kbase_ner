@@ -4,7 +4,7 @@ vars:
   name: "ner_kbase"
   lang: "en"
   version: "0.0.0"
-  pipeline: "en_core_web_lg"
+  pipeline: "en_core_web_md"
   train: "20210320-glue-dir-kbase-dev-sagemaker-ground-truth/train.spacy"
   dev: "20210320-glue-dir-kbase-dev-sagemaker-ground-truth/dev.spacy"
   test: "20210320-glue-dir-kbase-dev-sagemaker-ground-truth/test.spacy"
@@ -23,15 +23,27 @@ assets:
 
 workflows:
   all:
+    - download
     - convert
 
 commands:
-  - name: "convert"
-    help: "Convert the data to spaCy's binary format"
+  - name: "download"
+    help: "Download the pretrained pipeline"
     script:
+      - "python -m spacy download ${vars.pipeline}"
+
+  - name: "convert"
+    help: "Convert the data to spaCy's binary format, removing all non-NER annotation."
+    script:
+      - "python scripts/convert.py ${vars.lang} assets/${vars.train} corpus/train.spacy"
       - "python scripts/convert.py ${vars.lang} assets/${vars.dev} corpus/dev.spacy"
+      - "python scripts/convert.py ${vars.lang} assets/${vars.test} corpus/test.spacy"
     deps:
+      - "assets/${vars.train}"
       - "assets/${vars.dev}"
+      - "assets/${vars.test}"
       - "scripts/convert.py"
     outputs:
+      - "corpus/train.spacy"
       - "corpus/dev.spacy"
+      - "corpus/test.spacy"

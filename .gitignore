@@ -3,3 +3,4 @@ corpus/
 ner_demo/
 assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/20210320-glue-dir-kbase-dev.manifest
 assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/annotations/
+project.lock
