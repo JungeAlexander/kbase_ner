@@ -970,6 +970,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "spacy-lookups-data"
+version = "1.0.0"
+description = "Additional lookup tables and data resources for spaCy"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "srsly"
 version = "2.4.0"
 description = "Modern high-performance serialization utilities for Python"
@@ -1183,7 +1191,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "01b4f6801ad6ab4b40162feb7005f42fb24e8e2b47ba2fefe79c2565edc06d49"
+content-hash = "a9f612ba3b7d69fa900e7942d8c668b80cffcb3e7584fafc29b8b52997fd9ea0"
 
 [metadata.files]
 aiobotocore = [
@@ -1880,6 +1888,10 @@ spacy = [
 spacy-legacy = [
     {file = "spacy-legacy-3.0.1.tar.gz", hash = "sha256:3443becabcdcb797df95144c9865ab28f08e2e1a36653626e65f7c2a73ce7a08"},
     {file = "spacy_legacy-3.0.1-py2.py3-none-any.whl", hash = "sha256:0ed1fd45630469d5803eb3bf1ee38e1f3bea59d918c396cb350c1fd5eda7b06e"},
+]
+spacy-lookups-data = [
+    {file = "spacy_lookups_data-1.0.0-py2.py3-none-any.whl", hash = "sha256:73f21df512a81cb7887478191a2a1552c3b3aa623585bbc4a9174b91e6fcfadd"},
+    {file = "spacy_lookups_data-1.0.0.tar.gz", hash = "sha256:59b3e042c7ace98de06b3d22d079c7bc6970fe631bd77a1ee0487cfbe0eee605"},
 ]
 srsly = [
     {file = "srsly-2.4.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:9e55364151efaeb2811fc8dd222ece154cb74ababa57e878487b001c3ff2f8f6"},
