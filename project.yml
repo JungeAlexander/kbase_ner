@@ -3,17 +3,23 @@ description: "Named entity recognition for documents in kbase using spacy."
 vars:
   name: "ner_kbase"
   lang: "en"
-  dev: "20210312-dummy/run-DataSink0-1-part-r-00000.bz2"
   version: "0.0.0"
+  pipeline: "en_core_web_lg"
+  train: "20210320-glue-dir-kbase-dev-sagemaker-ground-truth/train.spacy"
+  dev: "20210320-glue-dir-kbase-dev-sagemaker-ground-truth/dev.spacy"
+  test: "20210320-glue-dir-kbase-dev-sagemaker-ground-truth/test.spacy"
   # Set your GPU ID, -1 is CPU
   gpu_id: -1
-  vectors_model: "en_core_web_md"
 
 directories: ["assets", "corpus", "configs", "training", "scripts", "packages"]
 
 assets:
-  - dest: "assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2"
-    description: "Dummy data as downloaded on 20210312 from RDS DB dump as produced by AWS Glue ETL."
+  - dest: "assets/${vars.train}"
+    description: "Annotated training data, preprocessed and stored in spacy's binary format."
+  - dest: "assets/${vars.dev}"
+    description: "Annotated development data, preprocessed and stored in spacy's binary format."
+  - dest: "assets/${vars.test}"
+    description: "Annotated test data, preprocessed and stored in spacy's binary format."
 
 workflows:
   all:

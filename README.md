@@ -39,7 +39,9 @@ in the project directory.
 
 | File | Source | Description |
 | --- | --- | --- |
-| [`assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2`](assets/20210312-dummy/run-DataSink0-1-part-r-00000.bz2) | Local | Dummy data as downloaded on 20210312 from RDS DB dump as produced by AWS Glue ETL. |
+| [`assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/train.spacy`](assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/train.spacy) | Local | Annotated training data, preprocessed and stored in spacy's binary format. |
+| [`assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/dev.spacy`](assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/dev.spacy) | Local | Annotated development data, preprocessed and stored in spacy's binary format. |
+| [`assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/test.spacy`](assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/test.spacy) | Local | Annotated test data, preprocessed and stored in spacy's binary format. |
 
 <!-- SPACY PROJECT: AUTO-GENERATED DOCS END (do not remove) -->
 
