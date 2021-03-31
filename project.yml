@@ -25,6 +25,7 @@ workflows:
   all:
     - download
     - convert
+    - create-config
 
 commands:
   - name: "download"
@@ -47,5 +48,13 @@ commands:
       - "corpus/train.spacy"
       - "corpus/dev.spacy"
       - "corpus/test.spacy"
-  
+
+  - name: "create-config"
+    help: "Create a config for updating only NER from an existing pipeline"
+    script:
+      - "python scripts/create_config.py ${vars.pipeline} ner configs/config.cfg"
+    deps:
+      - "scripts/create_config.py"
+    outputs:
+      - "configs/config.cfg"
 
