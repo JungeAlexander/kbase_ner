@@ -5,3 +5,4 @@ assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/20210320-glue-dir-kbas
 assets/20210320-glue-dir-kbase-dev-sagemaker-ground-truth/annotations/
 project.lock
 configs/config.cfg
+training/
