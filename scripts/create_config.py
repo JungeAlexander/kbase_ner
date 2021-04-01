@@ -26,7 +26,7 @@ from pathlib import Path
 import spacy
 
 
-def create_config(model_name: str, component_to_update: str, output_path: Path):
+def create_config(model_name: str, component_to_update: str, output_path: Path, train_path: str, dev_path: str):
     nlp = spacy.load(model_name)
 
     # create a new config as a copy of the loaded pipeline's config
@@ -36,6 +36,8 @@ def create_config(model_name: str, component_to_update: str, output_path: Path):
     default_config = spacy.blank(nlp.lang).config
     config["corpora"] = default_config["corpora"]
     config["training"] = default_config["training"]
+    config["paths"]["train"] = train_path
+    config["paths"]["dev"] = dev_path
 
     # set the vectors if the loaded pipeline has vectors
     if len(nlp.vocab.vectors) > 0:
