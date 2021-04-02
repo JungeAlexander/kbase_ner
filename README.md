@@ -18,7 +18,13 @@ Commands are only re-run if their inputs have changed.
 
 | Command | Description |
 | --- | --- |
-| `convert` | Convert the data to spaCy's binary format |
+| `download` | Download the pretrained pipeline |
+| `convert` | Convert the data to spaCy's binary format, removing all non-NER annotation. |
+| `create-config` | Create a config for updating only NER from an existing pipeline |
+| `train` | Update the NER model |
+| `evaluate` | Evaluate the model and export metrics |
+| `package` | Package the trained model as a pip package |
+| `visualize-model` | Visualize the model's output interactively using Streamlit |
 
 ### ⏭ Workflows
 
@@ -29,7 +35,7 @@ inputs have changed.
 
 | Workflow | Steps |
 | --- | --- |
-| `all` | `convert` |
+| `all` | `download` &rarr; `convert` &rarr; `create-config` &rarr; `train` &rarr; `evaluate` |
 
 ### 🗂 Assets
 
@@ -67,7 +73,7 @@ The project structure is based on a spacy example project structure obtained as 
 then adjusted:
 
 ```
-python -m spacy project clone pipelines/ner_demo
+python -m spacy project clone pipelines/ner_demo_update
 ```
 
 ## Documentation
