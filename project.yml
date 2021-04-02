@@ -27,6 +27,7 @@ workflows:
     - convert
     - create-config
     - train
+    - evaluate
 
 commands:
   - name: "download"
@@ -70,3 +71,12 @@ commands:
     outputs:
       - "training/model-best"
 
+  - name: "evaluate"
+    help: "Evaluate the model and export metrics"
+    script:
+      - "python -m spacy evaluate training/model-best corpus/dev.spacy --output training/metrics.json"
+    deps:
+      - "corpus/dev.spacy"
+      - "training/model-best"
+    outputs:
+      - "training/metrics.json"
